@@ -7,18 +7,16 @@
     ></app-basket-product>
   </div>
   <div class="product__summary">
-    <p><span> Product </span> <span>Quantity</span> <span>Price</span></p>
-    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
-    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
-    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
-    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
-    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
+    <p><span> Product </span> <span>Price</span></p>
+    <p *ngFor="let product of products">
+      <span> {{ product.name }} </span> <span>$ {{ product.price }}</span>
+    </p>
     <p>
       <span> Total Price </span>
       <span
-        ><strong>{{ totalProducts }}</strong></span
+        ><strong>{{ totalProducts }} product(s)</strong></span
       >
-      <span>{{ totalPrice }}</span>
+      <span>$ {{ totalPrice }}</span>
     </p>
     <div class="product__summary__controls">
       <button>Buy</button><button (click)="clearBasket()">Clear Cart</button>

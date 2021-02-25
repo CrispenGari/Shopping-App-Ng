@@ -10,13 +10,16 @@ export class BasketComponent implements OnInit {
   public totalProducts: number = 0;
   public totalPrice: any = 0;
   public arrayProduct: any[] = [];
-
   constructor(private productsBasketService: ProductsBasketService) {}
-
   ngOnInit(): void {
     setInterval(() => {
       this.productsBasketService.getBasket().subscribe((products) => {
         this.products = products;
+      });
+      this.totalPrice = 0;
+      this.totalProducts = this.products.length;
+      this.products.forEach((product) => {
+        this.totalPrice += product.price;
       });
     }, 200);
   }

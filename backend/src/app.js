@@ -76,13 +76,7 @@ server.app.delete("/basket/remove/:itemId", (req, res) => {
   });
 });
 server.app.delete("/basket/remove/all", (req, res) => {
-  basketModel.deleteMany({}, (err, data) => {
-    if (err) {
-      res.status(500).send(error);
-    } else {
-      res.status(200).send(data);
-    }
-  });
+  basketModel.deleteMany({});
 });
 server.app.listen(port, host, () => {
   console.log(`The server is running on port: ${port}`);
