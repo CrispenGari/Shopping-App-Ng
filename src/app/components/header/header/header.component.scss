@@ -1,0 +1,38 @@
+$header_color: "#FFFFF";
+// $mobile-device-min= 320px;
+// $tablets-device-min= 481px;
+// $laptops-device-min= 769px;
+// $desktops-device-min= 1025px;
+// $mobile-device-max= 480px;
+// $tablets-device-max= 768px;
+// $laptops-device-max= 1024px;
+// $desktops-device-max= 1200px;
+// $telephone-device-min= 1201px;
+.header {
+  padding: 35px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  .header__cart {
+    color: #333 !important;
+    font-size: 30px;
+  }
+  a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 20px 20px;
+  }
+}

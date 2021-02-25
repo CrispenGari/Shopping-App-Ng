@@ -1,0 +1,27 @@
+<div class="basket">
+  <h1>Your basket Contains the following products</h1>
+  <div class="basket__products">
+    <app-basket-product
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-basket-product>
+  </div>
+  <div class="product__summary">
+    <p><span> Product </span> <span>Quantity</span> <span>Price</span></p>
+    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
+    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
+    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
+    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
+    <p><span> Product </span> <span>0</span> <span>R 0.00</span></p>
+    <p>
+      <span> Total Price </span>
+      <span
+        ><strong>{{ totalProducts }}</strong></span
+      >
+      <span>{{ totalPrice }}</span>
+    </p>
+    <div class="product__summary__controls">
+      <button>Buy</button><button (click)="clearBasket()">Clear Cart</button>
+    </div>
+  </div>
+</div>
